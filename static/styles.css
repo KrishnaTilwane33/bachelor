@@ -1,0 +1,23 @@
+/* Tailwind CSS Custom Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles can be added below */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #1E3A8A; /* Tailwind's blue-700 */
+}
+
+.footer {
+    background-color: #1F2937; /* Tailwind's gray-800 */
+}
+
+.hero-bg {
+    background-image: url('https://images.pexels.com/photos/3761599/pexels-photo-3761599.jpeg');
+    background-size: cover;
+    background-position: center;
+}

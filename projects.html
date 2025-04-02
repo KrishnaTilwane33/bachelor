@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Projects | EduHub</title>
+    <title>Diploma Helper - Projects Marketplace</title>
+    <link rel="stylesheet" href="static/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-blue-700 text-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold">EduHub</a>
-            <div class="hidden md:flex space-x-6">
+            <a href="index.html" class="text-2xl font-bold">Diploma Helper</a>
+            <div class="hidden md:flex space-x-4">
                 <a href="index.html" class="hover:text-blue-200">Home</a>
-                <a href="study-materials.html" class="hover:text-blue-200">Study Materials</a>
-                <a href="question-papers.html" class="hover:text-blue-200">Question Papers</a>
-                <a href="handwritten-notes.html" class="hover:text-blue-200">Notes</a>
-                <a href="projects.html" class="hover:text-blue-200 font-semibold">Projects</a>
-                <a href="ai-assistant.html" class="hover:text-blue-200">AI Assistant</a>
-                <a href="career-opportunities.html" class="hover:text-blue-200">Careers</a>
-                <a href="about.html" class="hover:text-blue-200">About</a>
+                <a href="community.html" class="hover:text-blue-200">Community</a>
+                <a href="ar-vr-support.html" class="hover:text-blue-200">AR/VR Support</a>
+                <a href="projects.html" class="hover:text-blue-200 active">Projects Marketplace</a>
             </div>
             <button class="md:hidden focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
@@ -28,286 +27,117 @@
         </div>
     </nav>
 
+    <!-- Search Bar -->
+    <div class="bg-blue-600 py-4">
+        <div class="container mx-auto px-4">
+            <div class="relative max-w-md mx-auto">
+                <input type="text" placeholder="Search projects..."
+                    class="w-full py-2 px-4 rounded-lg focus:outline-none">
+                <button class="absolute right-2 top-2 text-blue-600">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-green-600 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">Projects Marketplace</h1>
+            <p class="text-xl mb-8">Buy and sell academic projects for Diploma Engineering</p>
+        </div>
+    </section>
+
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-12">
-        <h1 class="text-3xl font-bold mb-8 text-center">Student Projects</h1>
-        
-        <!-- Project Search -->
-        <div class="mb-8 bg-white p-4 rounded-lg shadow-md">
-            <div class="flex flex-col md:flex-row gap-4">
-                <div class="flex-1">
-                    <input type="text" placeholder="Search projects..." 
-                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <h2 class="text-2xl font-bold mb-4 md:mb-0">Available Projects</h2>
                 <div class="flex space-x-4">
-                    <select class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option>All Domains</option>
-                        <option>Web Development</option>
-                        <option>Machine Learning</option>
-                        <option>Mobile Apps</option>
-                        <option>IoT</option>
-                        <option>Data Science</option>
+                    <select class="p-2 border rounded">
+                        <option>All Branches</option>
+                        <option>Computer Engineering</option>
+                        <option>Mechanical Engineering</option>
+                        <option>Civil Engineering</option>
                     </select>
-                    <select class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option>All Difficulty Levels</option>
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Advanced</option>
-                    </select>
-                    <button class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                        Search
+                    <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                        <i class="fas fa-plus mr-2"></i>Sell Project
                     </button>
                 </div>
             </div>
-        </div>
 
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Project 1 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                <div class="relative pb-[56.25%] bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="E-Learning Platform" 
-                         class="absolute h-full w-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Web Dev</span>
-                        <span class="text-sm text-gray-500">4.8 ★ (24 reviews)</span>
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/400x200?text=IoT+Project"
+                            class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded">
+                            Computer Engg.
+                        </span>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Interactive E-Learning Platform</h3>
-                    <p class="text-gray-600 mb-4">A responsive web application with video lectures, quizzes, and progress tracking.</p>
-                    <div class="mb-4">
-                        <h4 class="font-medium mb-1">Tech Stack:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">React</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Node.js</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">MongoDB</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Tailwind CSS</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">By: Sarah Johnson</span>
-                        <div class="space-x-2">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Demo</a>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Source Code</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Smart Irrigation System</h3>
+                        <p class="text-gray-600 text-sm mb-4">IoT-based plant monitoring with NodeMCU</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-600">₹499</span>
+                            <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
+                                <i class="fas fa-shopping-cart mr-1"></i>Buy
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 2 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                <div class="relative pb-[56.25%] bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Sentiment Analysis" 
-                         class="absolute h-full w-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">ML/AI</span>
-                        <span class="text-sm text-gray-500">4.5 ★ (18 reviews)</span>
+                <!-- Project 2 -->
+                <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/400x200?text=Mechanical+Project"
+                            class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-yellow-600 text-white text-xs px-2 py-1 rounded">
+                            Mechanical Engg.
+                        </span>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Real-time Sentiment Analysis</h3>
-                    <p class="text-gray-600 mb-4">NLP model that analyzes customer reviews and classifies sentiment with 89% accuracy.</p>
-                    <div class="mb-4">
-                        <h4 class="font-medium mb-1">Tech Stack:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Python</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">TensorFlow</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Flask</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">NLTK</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">By: Michael Chen</span>
-                        <div class="space-x-2">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Demo</a>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Source Code</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Solar Powered Vehicle</h3>
+                        <p class="text-gray-600 text-sm mb-4">Complete design and prototype documentation</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-600">₹799</span>
+                            <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
+                                <i class="fas fa-shopping-cart mr-1"></i>Buy
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 3 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                <div class="relative pb-[56.25%] bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Fitness Tracker" 
-                         class="absolute h-full w-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Mobile</span>
-                        <span class="text-sm text-gray-500">4.7 ★ (32 reviews)</span>
+                <!-- Project 3 -->
+                <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/400x200?text=Web+Project"
+                            class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">
+                            Computer Engg.
+                        </span>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Smart Fitness Tracker App</h3>
-                    <p class="text-gray-600 mb-4">Cross-platform mobile app that tracks workouts, nutrition, and health metrics.</p>
-                    <div class="mb-4">
-                        <h4 class="font-medium mb-1">Tech Stack:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Flutter</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Firebase</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Dart</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Google Fit API</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">By: Priya Sharma</span>
-                        <div class="space-x-2">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Demo</a>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                <div class="relative pb-[56.25%] bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Smart Home" 
-                         class="absolute h-full w-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">IoT</span>
-                        <span class="text-sm text-gray-500">4.9 ★ (15 reviews)</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Smart Home Automation System</h3>
-                    <p class="text-gray-600 mb-4">IoT solution to control home appliances remotely with voice commands and scheduling.</p>
-                    <div class="mb-4">
-                        <h4 class="font-medium mb-1">Tech Stack:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Raspberry Pi</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Python</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">MQTT</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Node-RED</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">By: David Wilson</span>
-                        <div class="space-x-2">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Demo</a>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                <div class="relative pb-[56.25%] bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Data Visualization" 
-                         class="absolute h-full w-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Data Science</span>
-                        <span class="text-sm text-gray-500">4.6 ★ (21 reviews)</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">COVID-19 Data Visualization</h3>
-                    <p class="text-gray-600 mb-4">Interactive dashboard showing global pandemic trends with predictive modeling.</p>
-                    <div class="mb-4">
-                        <h4 class="font-medium mb-1">Tech Stack:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Python</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Plotly</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Pandas</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Streamlit</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">By: Emily Rodriguez</span>
-                        <div class="space-x-2">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Demo</a>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                <div class="relative pb-[56.25%] bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Blockchain" 
-                         class="absolute h-full w-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Blockchain</span>
-                        <span class="text-sm text-gray-500">4.4 ★ (12 reviews)</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Supply Chain Blockchain</h3>
-                    <p class="text-gray-600 mb-4">Decentralized ledger for tracking product authenticity through supply chain.</p>
-                    <div class="mb-4">
-                        <h4 class="font-medium mb-1">Tech Stack:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Solidity</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Ethereum</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Web3.js</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Truffle</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">By: James Park</span>
-                        <div class="space-x-2">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Demo</a>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Source Code</a>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">College ERP System</h3>
+                        <p class="text-gray-600 text-sm mb-4">PHP, MySQL with complete source code</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-600">₹699</span>
+                            <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
+                                <i class="fas fa-shopping-cart mr-1"></i>Buy
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Pagination -->
-        <div class="mt-12 flex justify-center">
-            <nav class="flex items-center space-x-2">
-                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">&laquo;</a>
-                <a href="#" class="px-4 py-2 border rounded-lg bg-blue-600 text-white">1</a>
-                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">2</a>
-                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">3</a>
-                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">&raquo;</a>
-            </nav>
-        </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-4">EduHub</h3>
-                    <p class="text-gray-400">Empowering students with comprehensive learning resources and career guidance.</p>
-                </div>
-                <div class="grid grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                        <ul class="space-y-2">
-                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
-                            <li><a href="study-materials.html" class="text-gray-400 hover:text-white">Study Materials</a></li>
-                            <li><a href="question-papers.html" class="text-gray-400 hover:text-white">Question Papers</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 EduHub. All rights reserved.</p>
-            </div>
-        </div>
+        <!-- Same as community.html -->
     </footer>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
