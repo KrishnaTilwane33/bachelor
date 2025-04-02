@@ -4,61 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diploma Helper - Comprehensive Learning Resources</title>
-    <link rel="stylesheet" href="static/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Diploma Helper - Engineering Learning Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            background-color: rgba(61, 52, 139, 0.7);
-            /* Primary with 70% opacity */
-            background-blend-mode: multiply;
-        }
-
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-
-        .mobile-menu.open {
-            max-height: 500px;
-        }
-
-        .dropdown-menu {
-            display: none;
-        }
-
-        .dropdown:hover .dropdown-menu,
-        .dropdown:focus-within .dropdown-menu {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .dropdown-menu {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-            }
-        }
-
-        /* New Color Scheme - 60-30-10 Rule */
+        /* Custom Colors */
         .bg-primary {
             background-color: #3D348B;
-            /* 60% - Dominant color */
         }
 
         .bg-secondary {
             background-color: #7678ED;
-            /* 30% - Secondary color */
         }
 
         .bg-accent {
             background-color: #F7B801;
-            /* 10% - Accent color */
+        }
+
+        .bg-nature {
+            background-color: #2E8B57;
         }
 
         .text-primary {
@@ -73,19 +37,8 @@
             color: #F7B801;
         }
 
-        .hover\:bg-primary:hover {
-            background-color: #2A2462;
-            /* Darker shade of primary */
-        }
-
-        .hover\:bg-secondary:hover {
-            background-color: #5E60D1;
-            /* Darker shade of secondary */
-        }
-
-        .hover\:bg-accent:hover {
-            background-color: #E0A901;
-            /* Darker shade of accent */
+        .text-nature {
+            color: #2E8B57;
         }
 
         .border-primary {
@@ -95,77 +48,154 @@
         .border-secondary {
             border-color: #7678ED;
         }
+
+        .border-accent {
+            border-color: #F7B801;
+        }
+
+        /* Hero Section */
+        .hero-bg {
+            background-image:
+                linear-gradient(rgba(68, 60, 143, 0.8), rgba(68, 58, 155, 0.8)),
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Nature Elements */
+        .leaf-decoration {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-image: url('https://www.freepnglogos.com/uploads/leaf-png/leaf-png-transparent-image-pngpix-14.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .leaf-top-left {
+            top: 0;
+            left: 0;
+            transform: rotate(180deg);
+        }
+
+        .leaf-bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        /* 3D Card Effect */
+        .card-3d {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-3d:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(52, 24, 117, 0.15);
+        }
+
+        /* Navigation */
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #F7B801;
+            transition: width 0.3s;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
     </style>
 </head>
 
-<body class="font-sans bg-gray-50">
-    <!-- Simplified Navigation -->
-    <nav class="bg-primary shadow-md sticky top-0 z-50">
+<body class="font-sans bg-gray-50 relative">
+    <!-- Nature Decorations -->
+    <div class="leaf-decoration leaf-top-left"></div>
+    <div class="leaf-decoration leaf-bottom-right"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-primary text-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <a href="#" class="flex items-center space-x-2">
                     <i class="fas fa-graduation-cap text-accent text-2xl"></i>
-                    <span class="text-xl font-bold text-white">DiplomaHelper</span>
+                    <span class="text-xl font-bold">DiplomaHelper</span>
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-6">
-                    <div class="relative dropdown">
-                        <button class="px-3 py-2 text-white hover:text-accent flex items-center focus:outline-none">
-                            <i class="fas fa-book mr-2"></i>Study Resources
-                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="nav-item group">
+                        <button class="px-3 py-2 flex items-center">
+                            <i class="fas fa-book mr-2"></i>
+                            Study Resources
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
                         </button>
                         <div
-                            class="dropdown-menu absolute mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 border border-secondary">
-                            <a href="study-materials.html"
-                                class="block px-4 py-2 text-primary hover:bg-gray-100">Materials</a>
-                            <a href="question-papers.html"
-                                class="block px-4 py-2 text-primary hover:bg-gray-100">Question Papers</a>
-                            <a href="handwritten-notes.html"
-                                class="block px-4 py-2 text-primary hover:bg-gray-100">Notes</a>
+                            class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-secondary hidden group-hover:block">
+                            <a href="study-materials.html" class="block px-4 py-2 text-primary hover:bg-gray-100">
+                                <i class="fas fa-file-alt mr-2"></i>Materials
+                            </a>
+                            <a href="question-papers.html" class="block px-4 py-2 text-primary hover:bg-gray-100">
+                                <i class="fas fa-question-circle mr-2"></i>Question Papers
+                            </a>
+                            <a href="handwritten-notes.html" class="block px-4 py-2 text-primary hover:bg-gray-100">
+                                <i class="fas fa-pen-fancy mr-2"></i>Handwritten Notes
+                            </a>
                         </div>
                     </div>
 
-                    <div class="relative dropdown">
-                        <button class="px-3 py-2 text-white hover:text-accent flex items-center focus:outline-none">
-                            <i class="fas fa-tools mr-2"></i>Tools
-                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                    <div class="nav-item group">
+                        <button class="px-3 py-2 flex items-center">
+                            <i class="fas fa-tools mr-2"></i>
+                            Learning Tools
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
                         </button>
                         <div
-                            class="dropdown-menu absolute mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 border border-secondary">
-                            <a href="ai-assistant.html" class="block px-4 py-2 text-primary hover:bg-gray-100">AI
-                                Assistant</a>
-                            <a href="ar-vr-support.html" class="block px-4 py-2 text-primary hover:bg-gray-100">AR/VR
-                                Labs</a>
+                            class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-secondary hidden group-hover:block">
+                            <a href="ai-assistant.html" class="block px-4 py-2 text-primary hover:bg-gray-100">
+                                <i class="fas fa-robot mr-2"></i>AI Assistant
+                            </a>
+                            <a href="ar-vr-support.html" class="block px-4 py-2 text-primary hover:bg-gray-100">
+                                <i class="fas fa-vr-cardboard mr-2"></i>AR/VR Labs
+                            </a>
                         </div>
                     </div>
 
-                    <a href="projects.html" class="px-3 py-2 text-white hover:text-accent">
-                        <i class="fas fa-store mr-2"></i>Marketplace
+                    <a href="projects.html" class="nav-item px-3 py-2 flex items-center">
+                        <i class="fas fa-project-diagram mr-2"></i>
+                        Project Marketplace
                     </a>
 
-                    <a href="community.html" class="px-3 py-2 text-white hover:text-accent">
-                        <i class="fas fa-users mr-2"></i>Community
+                    <a href="community.html" class="nav-item px-3 py-2 flex items-center">
+                        <i class="fas fa-users mr-2"></i>
+                        Community
                     </a>
-
-                    <div class="relative dropdown">
-                        <button class="px-3 py-2 text-white hover:text-accent flex items-center focus:outline-none">
-                            <i class="fas fa-briefcase mr-2"></i>Careers
-                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
-                        </button>
-                        <div
-                            class="dropdown-menu absolute mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 border border-secondary">
-                            <a href="career-opportunities.html"
-                                class="block px-4 py-2 text-primary hover:bg-gray-100">Opportunities</a>
-                            <a href="internships.html"
-                                class="block px-4 py-2 text-primary hover:bg-gray-100">Internships</a>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none">
+                <button id="mobileMenuButton" class="md:hidden focus:outline-none">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
@@ -176,178 +206,234 @@
                     <!-- Study Resources -->
                     <div class="relative">
                         <button onclick="toggleMobileDropdown('studyDropdown')"
-                            class="w-full flex justify-between items-center px-3 py-2 text-primary hover:text-accent">
+                            class="w-full flex justify-between items-center px-3 py-2 text-primary">
                             <span><i class="fas fa-book mr-2"></i>Study Resources</span>
                             <i class="fas fa-chevron-down transition-transform duration-200"></i>
                         </button>
                         <div id="studyDropdown" class="pl-4 hidden">
-                            <a href="study-materials.html"
-                                class="block px-3 py-2 text-primary hover:text-accent">Materials</a>
-                            <a href="question-papers.html"
-                                class="block px-3 py-2 text-primary hover:text-accent">Question Papers</a>
-                            <a href="handwritten-notes.html"
-                                class="block px-3 py-2 text-primary hover:text-accent">Notes</a>
+                            <a href="study-materials.html" class="block px-3 py-2 text-primary hover:text-accent">Materials</a>
+                            <a href="question-papers.html" class="block px-3 py-2 text-primary hover:text-accent">Question Papers</a>
+                            <a href="handwritten-notes.html" class="block px-3 py-2 text-primary hover:text-accent">Notes</a>
                         </div>
                     </div>
 
                     <!-- Tools -->
                     <div class="relative">
                         <button onclick="toggleMobileDropdown('toolsDropdown')"
-                            class="w-full flex justify-between items-center px-3 py-2 text-primary hover:text-accent">
+                            class="w-full flex justify-between items-center px-3 py-2 text-primary">
                             <span><i class="fas fa-tools mr-2"></i>Tools</span>
                             <i class="fas fa-chevron-down transition-transform duration-200"></i>
                         </button>
                         <div id="toolsDropdown" class="pl-4 hidden">
-                            <a href="ai-assistant.html" class="block px-3 py-2 text-primary hover:text-accent">AI
-                                Assistant</a>
-                            <a href="ar-vr-support.html" class="block px-3 py-2 text-primary hover:text-accent">AR/VR
-                                Labs</a>
+                            <a href="ai-assistant.html" class="block px-3 py-2 text-primary hover:text-accent">AI Assistant</a>
+                            <a href="ar-vr-support.html" class="block px-3 py-2 text-primary hover:text-accent">AR/VR Labs</a>
                         </div>
                     </div>
 
                     <!-- Marketplace -->
                     <a href="projects.html" class="block px-3 py-2 text-primary hover:text-accent">
-                        <i class="fas fa-store mr-2"></i>Marketplace
+                        <i class="fas fa-project-diagram mr-2"></i>Marketplace
                     </a>
 
                     <!-- Community -->
                     <a href="community.html" class="block px-3 py-2 text-primary hover:text-accent">
                         <i class="fas fa-users mr-2"></i>Community
                     </a>
-
-                    <!-- Careers -->
-                    <div class="relative">
-                        <button onclick="toggleMobileDropdown('careersDropdown')"
-                            class="w-full flex justify-between items-center px-3 py-2 text-primary hover:text-accent">
-                            <span><i class="fas fa-briefcase mr-2"></i>Careers</span>
-                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
-                        </button>
-                        <div id="careersDropdown" class="pl-4 hidden">
-                            <a href="career-opportunities.html"
-                                class="block px-3 py-2 text-primary hover:text-accent">Opportunities</a>
-                            <a href="internships.html"
-                                class="block px-3 py-2 text-primary hover:text-accent">Internships</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg h-96 flex items-center justify-center text-white">
-        <div class="text-center px-4">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Your Diploma Engineering Hub</h1>
-            <p class="text-xl mb-8">Access study resources, career guidance, and interactive learning tools</p>
-            <a href="#features"
-                class="bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">Explore
-                Resources</a>
-        </div>
-    </section>
-
-    <!-- Clickable Charts Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Explore Our Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section class="hero-bg h-96 flex items-center justify-center text-white relative">
+        <div class="text-center px-4 z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Engineering Knowledge Hub</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Your comprehensive platform for diploma engineering resources,
+                tools, and career growth</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="career-opportunities.html"
+                    class="bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition flex items-center justify-center">
+                    <i class="fas fa-book-open mr-2"></i>Career Opportunities
+                </a>
                 <a href="community.html"
-                    class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition text-center border border-gray-200 hover:border-secondary">
-                    <div class="text-secondary mb-4">
-                        <i class="fas fa-users text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-primary">Community</h3>
-                    <p class="text-gray-600">Share resources, chat, and collaborate with peers.</p>
-                </a>
-                <a href="ar-vr-support.html"
-                    class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition text-center border border-gray-200 hover:border-secondary">
-                    <div class="text-secondary mb-4">
-                        <i class="fas fa-vr-cardboard text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-primary">AR/VR Support</h3>
-                    <p class="text-gray-600">Access AR/VR resources and tutorials.</p>
-                </a>
-                <a href="projects.html"
-                    class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition text-center border border-gray-200 hover:border-secondary">
-                    <div class="text-secondary mb-4">
-                        <i class="fas fa-project-diagram text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-primary">Projects Marketplace</h3>
-                    <p class="text-gray-600">Buy and sell academic projects.</p>
+                    class="bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-600 transition flex items-center justify-center">
+                    <i class="fas fa-user-plus mr-2"></i>Join Community
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-16 bg-gray-50">
+    <section id="features" class="py-16 bg-white relative">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-primary">What We Offer</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">
+                <i class="fas fa-star mr-2 text-accent"></i>Key Features
+            </h2>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border border-gray-200">
-                    <div class="text-secondary mb-4">
-                        <i class="fas fa-book-open text-4xl"></i>
+                <div class="card-3d bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <div class="text-secondary mb-4 flex justify-center">
+                        <i class="fas fa-book-open text-5xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-primary">Comprehensive Study Materials</h3>
-                    <p class="text-gray-600">Curated textbooks, reference materials, and subject guides for all academic
-                        levels.</p>
+                    <h3 class="text-xl font-semibold mb-3 text-primary text-center">Comprehensive Resources</h3>
+                    <p class="text-gray-600 text-center">Access textbooks, reference materials, and subject-specific
+                        guides for all diploma engineering branches.</p>
+                    <div class="mt-4 flex justify-center">
+                        <a href="#feature" class="text-accent font-medium flex items-center">
+                            Explore <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border border-gray-200">
-                    <div class="text-secondary mb-4">
-                        <i class="fas fa-robot text-4xl"></i>
+                <div class="card-3d bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <div class="text-secondary mb-4 flex justify-center">
+                        <i class="fas fa-robot text-5xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-primary">AI Learning Assistant</h3>
-                    <p class="text-gray-600">Get personalized study guidance and answers to your academic questions.</p>
+                    <h3 class="text-xl font-semibold mb-3 text-primary text-center">Smart Learning Tools</h3>
+                    <p class="text-gray-600 text-center">AI-powered assistant and immersive AR/VR labs for practical
+                        understanding of complex concepts.</p>
+                    <div class="mt-4 flex justify-center">
+                        <a href="#" class="text-accent font-medium flex items-center">
+                            Try Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border border-gray-200">
-                    <div class="text-secondary mb-4">
-                        <i class="fas fa-briefcase text-4xl"></i>
+                <div class="card-3d bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <div class="text-secondary mb-4 flex justify-center">
+                        <i class="fas fa-briefcase text-5xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-primary">Career Opportunities</h3>
-                    <p class="text-gray-600">Discover internships, hackathons, and job openings relevant to your field.
-                    </p>
+                    <h3 class="text-xl font-semibold mb-3 text-primary text-center">Career Pathways</h3>
+                    <p class="text-gray-600 text-center">Discover internships, job opportunities, and skill development
+                        programs tailored for diploma holders.</p>
+                    <div class="mt-4 flex justify-center">
+                        <a href="career-opportunities.html" class="text-accent font-medium flex items-center">
+                            Explore Careers <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Elements Section -->
+    <section class="py-16 bg-gray-50 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">
+                <i class="fas fa-flask text-accent mr-2"></i>Interactive Learning
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="flex justify-center">
+                    <img src="https://cdn.dribbble.com/users/1787323/screenshots/11310802/media/392349d170a6e46e792c1b43dbf5c8ae.gif"
+                        alt="3D Learning Experience"
+                        class="rounded-xl shadow-2xl max-w-full h-auto border-4 border-accent">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-primary">Immersive 3D Experiences</h3>
+                    <p class="text-gray-700 mb-6">Engage with complex engineering concepts through our interactive 3D
+                        models and simulations. Visualize mechanical systems, electrical circuits, and architectural
+                        designs in a whole new way.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-cube text-secondary text-2xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-primary">3D Model Library</h4>
+                                <p class="text-gray-600">Explore hundreds of engineering components and systems</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-vr-cardboard text-secondary text-2xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-primary">VR Labs</h4>
+                                <p class="text-gray-600">Virtual workshops and lab environments</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-atom text-secondary text-2xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-primary">Interactive Simulations</h4>
+                                <p class="text-gray-600">Hands-on learning with dynamic simulations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="ar-vr-support.html"
+                        class="mt-6 inline-flex items-center bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">
+                        <i class="fas fa-eye mr-2"></i>Explore Interactive Tools
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-8">
+    <footer class="bg-primary text-white py-12 relative overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-4">Diploma Helper</h3>
-                    <p class="text-gray-300">Empowering diploma engineering students with comprehensive learning
-                        resources.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-graduation-cap text-accent mr-2"></i>DiplomaHelper
+                    </h3>
+                    <p class="text-gray-300 mb-4">Empowering the next generation of engineering professionals with
+                        comprehensive learning resources.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-accent text-xl"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-accent text-xl"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-accent text-xl"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-                <div class="grid grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-300 hover:text-accent">Home</a></li>
-                            <li><a href="study-materials.html" class="text-gray-300 hover:text-accent">Study
-                                    Materials</a></li>
-                            <li><a href="projects.html" class="text-gray-300 hover:text-accent">Marketplace</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-300 hover:text-accent text-xl"><i
-                                    class="fab fa-whatsapp"></i></a>
-                            <a href="#" class="text-gray-300 hover:text-accent text-xl"><i
-                                    class="fab fa-telegram"></i></a>
-                            <a href="#" class="text-gray-300 hover:text-accent text-xl"><i
-                                    class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="study-materials.html" class="text-gray-300 hover:text-accent flex items-center">
+                                <i class="fas fa-book text-xs mr-2"></i>Study Materials
+                            </a></li>
+                        <li><a href="question-papers.html" class="text-gray-300 hover:text-accent flex items-center">
+                                <i class="fas fa-file-alt text-xs mr-2"></i>Question Papers
+                            </a></li>
+                        <li><a href="ar-vr-support.html" class="text-gray-300 hover:text-accent flex items-center">
+                                <i class="fas fa-video text-xs mr-2"></i>Video Lectures
+                            </a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-accent flex items-center">
+                                <i class="fas fa-calculator text-xs mr-2"></i>Calculators
+                            </a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-accent flex items-center">
+                                <i class="fas fa-atom text-xs mr-2"></i>Simulators
+                            </a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-accent flex items-center">
+                                <i class="fas fa-robot text-xs mr-2"></i>AI Assistant
+                            </a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-secondary text-xs mr-2 mt-1"></i>
+                            <span class="text-gray-300">support@diplomahelper.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-secondary text-xs mr-2 mt-1"></i>
+                            <span class="text-gray-300">+91 9876543210</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-secondary mt-8 pt-8 text-center text-gray-300">
+
+            <div class="border-t border-secondary/30 mt-12 pt-8 text-center text-gray-300">
                 <p>&copy; 2023 Diploma Helper. All rights reserved.</p>
             </div>
         </div>
