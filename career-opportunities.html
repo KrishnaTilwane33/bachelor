@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities | EduHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .deadline-countdown {
+            font-family: monospace;
+        }
+        .opportunity-card:hover .apply-btn {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">EduHub</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-blue-200">Home</a>
+                <a href="study-materials.html" class="hover:text-blue-200">Study Materials</a>
+                <a href="question-papers.html" class="hover:text-blue-200">Question Papers</a>
+                <a href="handwritten-notes.html" class="hover:text-blue-200">Notes</a>
+                <a href="projects.html" class="hover:text-blue-200">Projects</a>
+                <a href="ai-assistant.html" class="hover:text-blue-200">AI Assistant</a>
+                <a href="career-opportunities.html" class="hover:text-blue-200 font-semibold">Careers</a>
+                <a href="about.html" class="hover:text-blue-200">About</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8 text-center">Career Opportunities</h1>
+        
+        <!-- Opportunity Tabs -->
+        <div class="mb-8 flex border-b">
+            <button class="px-6 py-3 font-medium border-b-2 border-blue-600 text-blue-600">Internships</button>
+            <button class="px-6 py-3 font-medium text-gray-500 hover:text-blue-600">Hackathons</button>
+            <button class="px-6 py-3 font-medium text-gray-500 hover:text-blue-600">Jobs</button>
+            <button class="px-6 py-3 font-medium text-gray-500 hover:text-blue-600">Scholarships</button>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="mb-8 bg-white p-4 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <input type="text" placeholder="Search opportunities..." 
+                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="flex space-x-4">
+                    <select class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>All Fields</option>
+                        <option>Computer Science</option>
+                        <option>Engineering</option>
+                        <option>Business</option>
+                        <option>Design</option>
+                        <option>Science</option>
+                    </select>
+                    <select class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>All Locations</option>
+                        <option>Remote</option>
+                        <option>United States</option>
+                        <option>Europe</option>
+                        <option>Asia</option>
+                    </select>
+                    <button class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Opportunities Grid -->
+        <div class="grid grid-cols-1 gap-6">
+            <!-- Internship 1 -->
+            <div class="opportunity-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <div class="flex items-center mb-2">
+                                <img src="https://logo.clearbit.com/google.com" alt="Google" class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h3 class="text-xl font-semibold">Software Engineering Intern</h3>
+                                    <p class="text-gray-600">Google • Mountain View, CA (Remote Available)</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Computer Science</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Paid</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Summer 2024</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <div class="text-sm text-gray-500 mb-2">
+                                <span>Apply by: </span>
+                                <span class="deadline-countdown font-medium">May 15, 2024 (in 45 days)</span>
+                            </div>
+                            <a href="#" class="apply-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internship 2 -->
+            <div class="opportunity-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <div class="flex items-center mb-2">
+                                <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h3 class="text-xl font-semibold">Data Science Intern</h3>
+                                    <p class="text-gray-600">Microsoft • Redmond, WA</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Data Science</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Paid</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Fall 2024</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <div class="text-sm text-gray-500 mb-2">
+                                <span>Apply by: </span>
+                                <span class="deadline-countdown font-medium">July 1, 2024 (in 92 days)</span>
+                            </div>
+                            <a href="#" class="apply-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hackathon 1 -->
+            <div class="opportunity-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <div class="flex items-center mb-2">
+                                <img src="https://logo.clearbit.com/devpost.com" alt="Devpost" class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h3 class="text-xl font-semibold">Global AI Hackathon</h3>
+                                    <p class="text-gray-600">Devpost • Virtual Event</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Artificial Intelligence</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">$50K Prizes</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Team Event</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <div class="text-sm text-gray-500 mb-2">
+                                <span>Starts: </span>
+                                <span class="deadline-countdown font-medium">April 5-7, 2024</span>
+                            </div>
+                            <a href="#" class="apply-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                Register Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 1 -->
+            <div class="opportunity-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <div class="flex items-center mb-2">
+                                <img src="https://logo.clearbit.com/amazon.com" alt="Amazon" class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h3 class="text-xl font-semibold">Junior Frontend Developer</h3>
+                                    <p class="text-gray-600">Amazon • Seattle, WA (Remote)</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">React</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">JavaScript</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Full-time</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <div class="text-sm text-gray-500 mb-2">
+                                <span>Posted: </span>
+                                <span class="font-medium">2 days ago</span>
+                            </div>
+                            <a href="#" class="apply-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internship 3 -->
+            <div class="opportunity-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <div class="flex items-center mb-2">
+                                <img src="https://logo.clearbit.com/tesla.com" alt="Tesla" class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h3 class="text-xl font-semibold">Mechanical Engineering Intern</h3>
+                                    <p class="text-gray-600">Tesla • Fremont, CA</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Engineering</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Paid</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Summer 2024</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <div class="text-sm text-gray-500 mb-2">
+                                <span>Apply by: </span>
+                                <span class="deadline-countdown font-medium">March 31, 2024 (in 20 days)</span>
+                            </div>
+                            <a href="#" class="apply-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hackathon 2 -->
+            <div class="opportunity-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <div class="flex items-center mb-2">
+                                <img src="https://logo.clearbit.com/mlh.io" alt="MLH" class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h3 class="text-xl font-semibold">MLH Local Hack Day</h3>
+                                    <p class="text-gray-600">Major League Hacking • Worldwide</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Beginner Friendly</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Swag Prizes</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Free Event</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <div class="text-sm text-gray-500 mb-2">
+                                <span>Next Event: </span>
+                                <span class="deadline-countdown font-medium">March 15, 2024</span>
+                            </div>
+                            <a href="#" class="apply-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                Register Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2">
+                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">&laquo;</a>
+                <a href="#" class="px-4 py-2 border rounded-lg bg-blue-600 text-white">1</a>
+                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">2</a>
+                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">3</a>
+                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">&raquo;</a>
+            </nav>
+        </div>
+
+        <!-- Career Resources -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-6 text-center">Career Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-file-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Resume Builder</h3>
+                    <p class="text-gray-600 mb-4">Create a professional resume tailored to your desired position with our easy-to-use template.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Build Your Resume →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-user-tie text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Interview Prep</h3>
+                    <p class="text-gray-600 mb-4">Practice common interview questions and get feedback on your responses.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Start Practicing →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-network-wired text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Networking Guide</h3>
+                    <p class="text-gray-600 mb-4">Learn how to effectively network and make professional connections in your field.</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read Guide →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">EduHub</h3>
+                    <p class="text-gray-400">Empowering students with comprehensive learning resources and career guidance.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="study-materials.html" class="text-gray-400 hover:text-white">Study Materials</a></li>
+                            <li><a href="question-papers.html" class="text-gray-400 hover:text-white">Question Papers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 EduHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update deadline countdowns
+        document.addEventListener('DOMContentLoaded', function() {
+            const deadlines = document.querySelectorAll('.deadline-countdown');
+            
+            deadlines.forEach(deadline => {
+                const text = deadline.textContent;
+                if (text.includes('(')) {
+                    const dateStr = text.split('(')[0].trim();
+                    const date = new Date(dateStr);
+                    const today = new Date();
+                    const diffTime = date - today;
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    
+                    if (diffDays > 0) {
+                        deadline.textContent = `${dateStr} (in ${diffDays} days)`;
+                    } else if (diffDays === 0) {
+                        deadline.textContent = `${dateStr} (Today!)`;
+                    } else {
+                        deadline.textContent = `${dateStr} (Closed)`;
+                        deadline.parentElement.nextElementSibling.classList.add('bg-gray-400', 'hover:bg-gray-500');
+                        deadline.parentElement.nextElementSibling.textContent = 'Closed';
+                    }
+                }
+            });
+            
+            // Tab switching functionality
+            const tabs = document.querySelectorAll('.border-b button');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('border-blue-600', 'text-blue-600'));
+                    tabs.forEach(t => t.classList.add('text-gray-500'));
+                    this.classList.add('border-blue-600', 'text-blue-600');
+                    this.classList.remove('text-gray-500');
+                    // Here you would typically load different content based on the tab
+                });
+            });
+        });
+    </script>
+</body>
+</html>

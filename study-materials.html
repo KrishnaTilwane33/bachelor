@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials | EduHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation (Same as index.html) -->
+    <nav class="bg-blue-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">EduHub</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-blue-200">Home</a>
+                <a href="study-materials.html" class="hover:text-blue-200 font-semibold">Study Materials</a>
+                <a href="question-papers.html" class="hover:text-blue-200">Question Papers</a>
+                <a href="handwritten-notes.html" class="hover:text-blue-200">Notes</a>
+                <a href="projects.html" class="hover:text-blue-200">Projects</a>
+                <a href="ai-assistant.html" class="hover:text-blue-200">AI Assistant</a>
+                <a href="career-opportunities.html" class="hover:text-blue-200">Careers</a>
+                <a href="about.html" class="hover:text-blue-200">About</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold mb-8 text-center">Study Materials</h1>
+        
+        <!-- Subject Filter -->
+        <div class="mb-8 bg-white p-4 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Filter Resources</h2>
+            <div class="flex flex-wrap gap-4">
+                <select class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>All Subjects</option>
+                    <option>Mathematics</option>
+                    <option>Physics</option>
+                    <option>Chemistry</option>
+                    <option>Computer Science</option>
+                    <option>Biology</option>
+                </select>
+                <select class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option>All Levels</option>
+                    <option>High School</option>
+                    <option>Undergraduate</option>
+                    <option>Graduate</option>
+                </select>
+                <button class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    Apply Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- Materials Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Material Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-square-root-alt text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Advanced Calculus</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Comprehensive guide covering limits, derivatives, integrals, and series with practice problems.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Mathematics • Undergraduate</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Material Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-atom text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Quantum Physics</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Introduction to quantum mechanics with mathematical foundations and applications.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Physics • Graduate</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Material Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-dna text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Molecular Biology</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Detailed notes on DNA replication, transcription, translation and genetic regulation.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Biology • Undergraduate</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Material Card 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-laptop-code text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Data Structures</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Complete reference for arrays, linked lists, trees, graphs and algorithm analysis.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Computer Science • All Levels</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Material Card 5 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-flask text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Organic Chemistry</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Reaction mechanisms, functional groups, and spectroscopy techniques.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Chemistry • Undergraduate</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Material Card 6 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-calculator text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Linear Algebra</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Vector spaces, matrices, determinants, eigenvalues and applications.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Mathematics • All Levels</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2">
+                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">&laquo;</a>
+                <a href="#" class="px-4 py-2 border rounded-lg bg-blue-600 text-white">1</a>
+                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">2</a>
+                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">3</a>
+                <a href="#" class="px-4 py-2 border rounded-lg hover:bg-gray-100">&raquo;</a>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">EduHub</h3>
+                    <p class="text-gray-400">Empowering students with comprehensive learning resources and career guidance.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="study-materials.html" class="text-gray-400 hover:text-white">Study Materials</a></li>
+                            <li><a href="question-papers.html" class="text-gray-400 hover:text-white">Question Papers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 EduHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

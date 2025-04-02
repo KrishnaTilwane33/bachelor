@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant | EduHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .chat-container {
+            height: 60vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+        }
+        .typing-indicator::after {
+            content: '...';
+            animation: typing 1.5s infinite;
+        }
+        @keyframes typing {
+            0% { content: '.'; }
+            33% { content: '..'; }
+            66% { content: '...'; }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">EduHub</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-blue-200">Home</a>
+                <a href="study-materials.html" class="hover:text-blue-200">Study Materials</a>
+                <a href="question-papers.html" class="hover:text-blue-200">Question Papers</a>
+                <a href="handwritten-notes.html" class="hover:text-blue-200">Notes</a>
+                <a href="projects.html" class="hover:text-blue-200">Projects</a>
+                <a href="ai-assistant.html" class="hover:text-blue-200 font-semibold">AI Assistant</a>
+                <a href="career-opportunities.html" class="hover:text-blue-200">Careers</a>
+                <a href="about.html" class="hover:text-blue-200">About</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6 text-center">AI Learning Assistant</h1>
+        
+        <!-- Topic Selection -->
+        <div class="mb-6 bg-white p-4 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">What do you need help with?</h2>
+            <div class="flex flex-wrap gap-3">
+                <button class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition">Math Help</button>
+                <button class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition">Science Concepts</button>
+                <button class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition">Programming</button>
+                <button class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition">Exam Preparation</button>
+                <button class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition">Writing Assistance</button>
+                <button class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition">Research Help</button>
+            </div>
+        </div>
+
+        <!-- Chat Interface -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Chat Header -->
+            <div class="bg-blue-600 text-white p-4 flex items-center">
+                <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold">EduBot</h3>
+                    <p class="text-xs text-blue-200">AI Learning Assistant</p>
+                </div>
+                <div class="ml-auto flex space-x-2">
+                    <button class="p-2 rounded-full hover:bg-blue-500">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-container p-4 space-y-4" id="chatWindow">
+                <!-- Welcome Message -->
+                <div class="flex items-start">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                        <i class="fas fa-robot text-blue-600"></i>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-3 max-w-[80%]">
+                        <p>Hello! I'm EduBot, your AI learning assistant. How can I help you with your studies today? You can ask me about:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Explaining difficult concepts</li>
+                            <li>Solving math problems</li>
+                            <li>Suggesting study resources</li>
+                            <li>Reviewing your writing</li>
+                            <li>Preparing for exams</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Example User Message -->
+                <div class="flex items-start justify-end">
+                    <div class="bg-blue-100 rounded-lg p-3 max-w-[80%]">
+                        <p>Can you explain quantum physics basics?</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center ml-3">
+                        <i class="fas fa-user text-gray-600"></i>
+                    </div>
+                </div>
+
+                <!-- Example Bot Response -->
+                <div class="flex items-start">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                        <i class="fas fa-robot text-blue-600"></i>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-3 max-w-[80%]">
+                        <p>Certainly! Quantum physics is the study of matter and energy at the most fundamental level. Key concepts include:</p>
+                        <ol class="list-decimal pl-5 mt-2 space-y-1">
+                            <li><strong>Wave-particle duality:</strong> Particles can behave as both particles and waves</li>
+                            <li><strong>Quantum superposition:</strong> Particles can exist in multiple states simultaneously</li>
+                            <li><strong>Quantum entanglement:</strong> Particles can be connected across distances</li>
+                        </ol>
+                        <p class="mt-2">Would you like me to explain any of these in more detail?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="border-t p-4 bg-gray-50">
+                <div class="flex items-center">
+                    <input type="text" placeholder="Type your question here..." 
+                           class="flex-1 px-4 py-2 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="flex justify-between mt-2 text-xs text-gray-500">
+                    <span>EduBot may produce inaccurate information</span>
+                    <button class="text-blue-600 hover:text-blue-800">Clear Chat</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <div class="text-blue-600 mb-3">
+                    <i class="fas fa-lightbulb text-3xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Concept Explanation</h3>
+                <p class="text-gray-600">Get clear, simplified explanations of complex topics across all subjects.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <div class="text-blue-600 mb-3">
+                    <i class="fas fa-calculator text-3xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Problem Solving</h3>
+                <p class="text-gray-600">Step-by-step solutions to math and science problems with explanations.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <div class="text-blue-600 mb-3">
+                    <i class="fas fa-book-open text-3xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Study Guidance</h3>
+                <p class="text-gray-600">Personalized study plans and resource recommendations based on your needs.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">EduHub</h3>
+                    <p class="text-gray-400">Empowering students with comprehensive learning resources and career guidance.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="study-materials.html" class="text-gray-400 hover:text-white">Study Materials</a></li>
+                            <li><a href="question-papers.html" class="text-gray-400 hover:text-white">Question Papers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 EduHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Basic chat functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatWindow = document.getElementById('chatWindow');
+            const messageInput = document.querySelector('input[type="text"]');
+            const sendButton = document.querySelector('button i.fa-paper-plane').parentNode;
+            
+            // Scroll to bottom of chat
+            function scrollToBottom() {
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+            
+            // Add message to chat
+            function addMessage(content, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `flex items-start ${isUser ? 'justify-end' : ''}`;
+                
+                const avatarDiv = document.createElement('div');
+                avatarDiv.className = `w-8 h-8 rounded-full ${isUser ? 'bg-gray-200 ml-3' : 'bg-blue-100 mr-3'} flex items-center justify-center`;
+                
+                const avatarIcon = document.createElement('i');
+                avatarIcon.className = `fas ${isUser ? 'fa-user text-gray-600' : 'fa-robot text-blue-600'}`;
+                avatarDiv.appendChild(avatarIcon);
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = `${isUser ? 'bg-blue-100' : 'bg-blue-50'} rounded-lg p-3 max-w-[80%]`;
+                contentDiv.innerHTML = `<p>${content}</p>`;
+                
+                if (isUser) {
+                    messageDiv.appendChild(contentDiv);
+                    messageDiv.appendChild(avatarDiv);
+                } else {
+                    messageDiv.appendChild(avatarDiv);
+                    messageDiv.appendChild(contentDiv);
+                }
+                
+                chatWindow.appendChild(messageDiv);
+                scrollToBottom();
+            }
+            
+            // Send message
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message) {
+                    addMessage(message, true);
+                    messageInput.value = '';
+                    
+                    // Show typing indicator
+                    const typingDiv = document.createElement('div');
+                    typingDiv.className = 'flex items-start';
+                    typingDiv.innerHTML = `
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-robot text-blue-600"></i>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3 max-w-[80%]">
+                            <p class="typing-indicator">EduBot is typing</p>
+                        </div>
+                    `;
+                    chatWindow.appendChild(typingDiv);
+                    scrollToBottom();
+                    
+                    // Simulate bot response after delay
+                    setTimeout(() => {
+                        chatWindow.removeChild(typingDiv);
+                        const responses = [
+                            "I'm analyzing your question... Here's what I found: Quantum physics deals with the behavior of matter and energy at atomic and subatomic levels.",
+                            "Great question! The key principle is that energy comes in discrete packets called quanta.",
+                            "That's an interesting topic! Would you like me to focus on any particular aspect like wave-particle duality or quantum entanglement?"
+                        ];
+                        addMessage(responses[Math.floor(Math.random() * responses.length)], false);
+                    }, 1500);
+                }
+            }
+            
+            // Event listeners
+            sendButton.addEventListener('click', sendMessage);
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Topic buttons
+            document.querySelectorAll('.bg-blue-100.rounded-full').forEach(button => {
+                button.addEventListener('click', function() {
+                    const topic = this.textContent.trim();
+                    addMessage(`I need help with ${topic}`, true);
+                    
+                    // Show typing indicator
+                    const typingDiv = document.createElement('div');
+                    typingDiv.className = 'flex items-start';
+                    typingDiv.innerHTML = `
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-robot text-blue-600"></i>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-3 max-w-[80%]">
+                            <p class="typing-indicator">EduBot is typing</p>
+                        </div>
+                    `;
+                    chatWindow.appendChild(typingDiv);
+                    scrollToBottom();
+                    
+                    // Simulate bot response after delay
+                    setTimeout(() => {
+                        chatWindow.removeChild(typingDiv);
+                        const responses = {
+                            "Math Help": "I can help with algebra, calculus, statistics, and more. What specific concept or problem are you working on?",
+                            "Science Concepts": "Whether it's physics, chemistry, or biology, I can explain scientific principles. What topic would you like to explore?",
+                            "Programming": "I can assist with coding concepts, debugging, and algorithm design. Which language or problem are you working with?",
+                            "Exam Preparation": "Let me help you prepare! What subject is your exam in, and what specific areas do you need to focus on?",
+                            "Writing Assistance": "I can help with essay structure, grammar, and editing. Would you like to share your writing or ask about a specific aspect?",
+                            "Research Help": "I can suggest resources and methodologies. What's your research topic and what kind of help do you need?"
+                        };
+                        addMessage(responses[topic] || "I'd be happy to help with that topic. What specific questions do you have?", false);
+                    }, 1500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
